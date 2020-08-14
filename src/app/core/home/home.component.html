@@ -1,0 +1,40 @@
+<section class="container">
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+
+  <mat-card class="example-card" *ngFor="let blog of blogsData">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image">
+        <span>
+          {{ blog.authorId.firstName[0] }}
+        </span>
+      </div>
+      <mat-card-title
+        ><a [routerLink]="['/blog', blog._id]">{{
+          blog.title
+        }}</a></mat-card-title
+      >
+      <mat-card-subtitle>{{
+        blog.authorId.firstName + blog.authorId.lastName
+      }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="blog.photo" alt="Photo of a Blog" />
+    <mat-card-content>
+      <p>
+        {{
+          blog.body.length > 250 ? blog.body.slice(0, 250) + "....." : blog.body
+        }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions *ngIf="user">
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-paginator
+    [length]="pageCount"
+    [pageSize]="4"
+    (page)="pageChanges($event)"
+  >
+  </mat-paginator>
+</section>

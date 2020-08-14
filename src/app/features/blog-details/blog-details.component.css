@@ -1,0 +1,36 @@
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+.blog-img {
+  display: block;
+  background-size: cover;
+  width: 100%;
+}
+
+.blog-tag {
+  display: inline-block;
+  background-color: lightskyblue;
+  padding: 7px;
+  border-radius: 20px;
+  margin-right: 10px;
+}
