@@ -4,9 +4,10 @@ import { RouterModule } from "@angular/router";
 import { BlogDetailsComponent } from "./blog-details/blog-details.component";
 import { BlogResolverService } from "../_services/blog-resolver.service";
 import { FollowersBlogsComponent } from "./followers-blogs/followers-blogs.component";
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
-  declarations: [BlogDetailsComponent, FollowersBlogsComponent],
+  declarations: [BlogDetailsComponent, FollowersBlogsComponent, ProfileComponent],
   imports: [
     CommonModule,
     RouterModule.forChild([
