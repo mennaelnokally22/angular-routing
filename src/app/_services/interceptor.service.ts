@@ -23,7 +23,7 @@ export class InterceptorService implements HttpInterceptor {
     console.log(token);
     let newHeaders = req.headers;
     if (token) {
-      newHeaders = newHeaders.append("authtoken", token);
+      newHeaders = newHeaders.append("Authorization", token);
     }
     const modifiedReq = req.clone({ headers: newHeaders });
 
