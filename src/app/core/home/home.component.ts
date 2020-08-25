@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { BlogsService } from "../../_services/blogs.service";
 import { PageEvent } from "@angular/material/paginator";
 import { AuthService } from "src/app/_services/auth.service";
+import { Blog } from "src/app/_models/blog";
 
 @Component({
   selector: "app-home",
@@ -10,7 +11,7 @@ import { AuthService } from "src/app/_services/auth.service";
 })
 export class HomeComponent implements OnInit {
   isLoading: boolean = true;
-  blogsData: Array<any>;
+  blogsData: Array<Blog>;
   pageCount: number = 1;
   pageEvent: PageEvent;
   user: Object = null;
