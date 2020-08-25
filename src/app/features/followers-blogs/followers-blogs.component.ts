@@ -11,11 +11,17 @@ import { Observable } from "rxjs";
 export class FollowersBlogsComponent implements OnInit {
   constructor(private followedBlogService: FollowersBlogsService) {}
   blogsData: Blog[];
-
+  isLoading: boolean = true;
   ngOnInit() {
-    this.followedBlogService.getFollowingBlogs().subscribe((blogs) => {
-      this.blogsData = blogs;
-      console.log(blogs);
-    });
+    this.followedBlogService.getFollowingBlogs().subscribe(
+      (blogs) => {
+        this.blogsData = blogs;
+        console.log(blogs);
+      },
+      (err) => {
+        console.log(err);
+      },
+      () => (this.isLoading = false)
+    );
   }
 }

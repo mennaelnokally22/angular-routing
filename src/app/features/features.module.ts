@@ -6,6 +6,7 @@ import { BlogDetailsComponent } from "./blog-details/blog-details.component";
 import { BlogResolverService } from "../_services/blog-resolver.service";
 import { FollowersBlogsComponent } from "./followers-blogs/followers-blogs.component";
 import { ProfileComponent } from "./profile/profile.component";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ProfileComponent } from "./profile/profile.component";
   imports: [
     CommonModule,
     MatCardModule,
+    MatProgressSpinnerModule,
     RouterModule.forChild([
       {
         path: "followers-blogs",
