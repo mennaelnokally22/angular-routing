@@ -10,9 +10,9 @@ import { environment } from "../../environments/environment";
 export class FollowersBlogsService {
   constructor(private httpService: HttpClient) {}
 
-  getBlogs(): Observable<Blog[]> {
+  getFollowingBlogs(): Observable<Blog[]> {
     return this.httpService.get<Blog[]>(
-      `${environment.backendBaseUrl}/followed/blogs`
+      `${environment.backendBaseUrl}/user/followed/blogs`
     );
   }
 }
